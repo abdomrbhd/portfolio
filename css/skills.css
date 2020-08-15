@@ -1,0 +1,40 @@
+.skills .container {
+    display: flex;
+    flex-direction: row;
+    align-items: unset;
+    justify-content: unset;
+    padding: 4rem 2rem 4rem 0;
+    gap: 2rem;
+}
+
+.skills .container div {
+    flex: 1;
+}
+
+.skills .container div h2 {
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.skills .container div h3 {
+    margin-top: 1.8rem;
+    margin-bottom: 0.4rem;
+    text-transform: capitalize;
+}
+
+.skills .container div .chart {
+    height: 1.7rem;
+    width: 100%;
+    background-color: #f2f2f2;
+}
+
+.skills .container div .chart span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    background-color: #32cb71;
+    font-weight: 600;
+    color: #fff;
+    padding-right: 0.5rem;
+}

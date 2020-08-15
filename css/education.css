@@ -1,0 +1,73 @@
+.testemonials .container,
+.experience .container {
+    display: flex;
+    flex-direction: row;
+    align-items: unset;
+    justify-content: unset;
+    padding: 3rem 0;
+    gap: 2rem;
+}
+
+.testemonials .container h2,
+.experience .container h2 {
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.testemonials .container p,
+.experience .container p {
+    margin-bottom: 1.2rem;
+}
+
+.testemonials .container:last-child,
+.experience .container:last-child {
+    padding: 2.3rem 0 1rem 2rem;
+}
+
+.testemonials .container:last-child h3,
+.experience .container:last-child h3 {
+    margin-bottom: 0.2rem;
+    margin-top: 3rem;
+    text-transform: capitalize;
+}
+
+.testemonials .container:last-child h3+p,
+.experience .container:last-child h3+p {
+    text-transform: capitalize;
+    margin: 0 0 0.2rem;
+}
+
+.testemonials .container:last-child h3+p span,
+.experience .container:last-child h3+p span {
+    font-weight: bold;
+}
+
+.testemonials .container:last-child div,
+.experience .container:last-child div {
+    padding-bottom: 1.2rem;
+}
+
+p~span {
+    background-color: #32cb71;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.6em;
+    font-weight: bold;
+    padding: 0.3rem 0.3rem 0.3rem;
+}
+
+.quote {
+    text-align: center;
+    background-color: #f2f2f2;
+    color: #4c5658;
+    font-style: italic;
+    padding: 3rem 0;
+    font-size: 0.95em;
+}
+
+.quote p {
+    font-weight: bold;
+    font-style: normal;
+    text-transform: uppercase;
+    color: #4c5658;
+}

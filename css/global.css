@@ -1,0 +1,144 @@
+:root {
+    --pr-one-focus: #2c3e50aa;
+    --pr-one-light: #34495e;
+    --pr-one-dark: #2c3e50;
+    --pr-two-hover: #3498db88;
+    --pr-two-light: #3498db;
+    --pr-two-dark: #2980b9;
+
+    --speed: .3s;
+
+    /*  Copyed from bootstrap  */
+    --white: #fff;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul {
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/*
+ * Bootstrap reset
+ */
+.btn:hover {
+    color: var(--white);
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+/*
+ * Helper Classes
+ */
+.section {
+    padding: 2rem 0;
+}
+
+.btn-green {
+    border: 1.2px solid var(--pr-color);
+    padding: 0.7rem 1.2rem;
+    color: var(--pr-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all var(--speed);
+}
+
+.btn-green:hover {
+    background-color: var(--pr-color);
+    color: var(--white);
+}
+
+.bg-img {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.position-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.position-y-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*
+ * Main nav
+ */
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+    min-width: 375px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--pr-one-dark);
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    background-image: linear-gradient(to right, var(--pr-two-light), var(--pr-two-dark));
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+}
+
+@media (min-width: 768px) {
+    .main {
+        height: 87%;
+        width: 85%;
+        border-radius: 1rem;
+        padding: 0 3rem;
+    }
+}
+
+.options {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 200;
+    transform: translateX(-200vw);
+    opacity: 0;
+    transition: opacity calc(var(--speed) * 2);
+}
+
+.options--show {
+    opacity: 1;
+}
+
+.options__wrapper {
+    background: white;
+}
+
+.body__overllay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    z-index: 101;
+    opacity: 0;
+    background-color: #000a;
+    transition: opacity var(--speed);
+}
+
+.overllay--active {
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+}

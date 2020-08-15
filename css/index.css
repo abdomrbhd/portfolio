@@ -1,0 +1,257 @@
+@import url(./header.css);
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+.main__content {
+  overflow: hidden;
+}
+
+.content__section {
+  padding: 1rem 0;
+  height: 100%;
+  transition: all calc(var(--speed) * 2);
+}
+
+.section-top--active {
+  transform: translateY(0%);
+}
+
+.section-top--not-active,
+.section-bottom--active {
+  transform: translateY(-100%);
+}
+
+.section-bottom--not-active {
+  transform: translateY(0%);
+}
+
+.landing__title {
+  font-size: min(13vw, 3rem);
+  font-weight: 900;
+  line-height: 1.5;
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 2px;
+}
+
+.landing__title,
+.landing__text {
+  color: var(--pr-one-dark);
+}
+
+.landing__btn {
+  border: 1px solid var(--pr-one-dark);
+  text-transform: uppercase;
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: .5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.landing__btn:active::before {
+  height: 200%;
+  width: 200%;
+}
+
+.landing__btn:active span {
+  color: var(--pr-two-dark);
+}
+
+.landing__btn::before {
+  content: "";
+  position: absolute;
+  left: -50%;
+  bottom: -50%;
+  z-index: -1;
+  border-radius: 50%;
+  height: 0;
+  width: 0;
+  background-color: var(--pr-one-dark);
+  transition: all var(--speed);
+}
+
+.landing__btn span {
+  color: var(--pr-one-dark);
+  transition: color calc(var(--speed) * 2);
+}
+
+.features__header {
+  margin-bottom: 1.5rem;
+}
+
+.features__headline {
+  color: var(--pr-one-dark);
+  font-size: 2.5rem;
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 1px;
+}
+
+.features__slider {
+  padding: 1rem;
+  background-color: var(--pr-one-dark);
+  color: var(--pr-two-light);
+}
+
+.features__wrapper {
+  transform: translateX(-100%);
+}
+
+.features__feature {
+  padding: 2rem 1rem;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.slider__controler button {
+  color: var(--pr-two-light);
+}
+
+.slider__controler button:active {
+  box-shadow: 0 0 .2rem var(--pr-two-light);
+}
+
+.slider__controler button:focus {
+  color: var(--pr-two-light);
+  box-shadow: 0 0 .2rem var(--pr-two-light);
+}
+
+.pagination_item {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid var(--pr-two-light);
+  margin: .2rem;
+}
+
+.pagination_item--active {
+  background-color: var(--pr-two-light);
+}
+
+.main__footer {
+  padding: .7rem 0;
+}
+
+.active-section-toggler {
+  padding: .3rem 1.5rem;
+  color: var(--pr-one-dark);
+  transition: color var(--speed), background-color var(--speed);
+}
+
+.active-section-toggler:focus {
+  color: var(--pr-one-dark);
+}
+
+.active-section-toggler:active {
+  color: var(--pr-two-light);
+  background-color: var(--pr-one-focus);
+}
+
+.contact__open-btn,
+.contact__close-btn {
+  font-weight: 600;
+  color: var(--pr-two-light);
+  background-color: var(--pr-one-dark);
+  transition: color var(--speed), background-color var(--speed);
+  opacity: 0;
+  transition: opacity var(--speed);
+}
+
+.contact__open-btn:active {
+  color: var(--pr-one-dark);
+  background-color: var(--pr-two-light);
+}
+
+.contact__close-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 51;
+  color: var(--pr-one-dark);
+  background-color: var(--pr-two-light);
+  transform: translate(-50%, -50%);
+}
+
+.contact__btn--active {
+  opacity: 1;
+}
+
+.contact__overllay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  background-color: var(--pr-one-dark);
+  opacity: .5;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.contact__overllay--expanded {
+  z-index: 50;
+  animation: expand 1s forwards;
+}
+
+@keyframes expand {
+  from {
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  to {
+    transform: translate(-5rem, -100vh);
+    width: 150vw;
+    height: 150vh;
+    border-radius: 0;
+    opacity: 1;
+  }
+}
+
+.overllay__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact__form-wrapper {
+  opacity: 0;
+}
+
+.contact__form-wrapper--show {
+  animation: show 1s .8s forwards;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.social-media__icon {
+  color: var(--pr-one-dark);
+  transition: color var(--speed);
+  margin-left: .2rem;
+}
+
+.social-media a::hover,
+.social-media .social-media__icon::hover {
+  color: var(--pr-one-dark);
+}
+
+.social-media a i::hover {
+  color: var(--white);
+}
